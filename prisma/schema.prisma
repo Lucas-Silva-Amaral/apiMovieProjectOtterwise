@@ -9,7 +9,7 @@ datasource db {
 
 model gender {
   id    Int     @id @default(autoincrement())
-  name  String? @db.VarChar(100)
+  name  String @db.VarChar(100)
   movie movie[]
 }
 
@@ -17,16 +17,17 @@ model movie {
   id          Int    @id @default(autoincrement())
   title       String @db.VarChar(100)
   description String @db.VarChar(1000)
+  create_at  DateTime @default(now())
   user_id     Int
-  genderid    Int
-  gender      gender @relation(fields: [genderid], references: [id])
+  gender_id    Int
+  gender      gender @relation(fields: [gender_id], references: [id])
   users       user  @relation(fields: [user_id], references: [id])
 }
 
 model user {
   id       Int     @id @default(autoincrement())
   name     String  @db.VarChar(100)
-  email    String  @db.VarChar(150)
-  password String  @db.VarChar(50)
+  email    String  @unique @db.VarChar(150)
+  password String  
   movie    movie[]
 }

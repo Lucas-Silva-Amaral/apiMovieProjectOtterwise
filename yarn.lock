@@ -24,6 +24,11 @@
     "semver" "^7.3.5"
     "tar" "^6.1.11"
 
+"@prisma/cli@^2.0.0-alpha.1314":
+  "integrity" "sha512-V7RGdTUNyNyXEpfmXdJ9UPbQMUpNdtj29c54dwEtnx0QQFtogbRv3i868zO+rJUUwN30yN5vUOqZbtoLispVsw=="
+  "resolved" "https://registry.npmjs.org/@prisma/cli/-/cli-2.0.0-alpha.1314.tgz"
+  "version" "2.0.0-alpha.1314"
+
 "@prisma/client@^3.9.1":
   "integrity" "sha512-aLwfXKLvL+loQ0IuPPCXkcq8cXBg1IeoHHa5lqQu3dJHdj45wnislA/Ny4UxRQjD5FXqrfAb8sWtF+jhdmjFTg=="
   "resolved" "https://registry.npmjs.org/@prisma/client/-/client-3.9.1.tgz"
