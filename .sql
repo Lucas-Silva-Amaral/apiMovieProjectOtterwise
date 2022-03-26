@@ -1,4 +1,4 @@
-CREATE TABLE user (
+CREATE TABLE users (
   id serial primary key,
   name varchar(100) not null,
   email varchar(150) not null,
@@ -11,13 +11,12 @@ CREATE TABLE movie(
   title varchar(100) not null,
   description varchar(1000) not null,
   user_id integer not null,
-  foreign key (user_id) references user (id),
+  foreign key (user_id) references users (id),
   genderId integer not null,
-  foreign key (genderId) references gender (id),
+  foreign key (genderId) references gender (id)
 );
 
 CREATE TABLE gender(
   id serial primary key,
-  name VARCHAR(100),
-)
-;
+  name VARCHAR(100)
+);
