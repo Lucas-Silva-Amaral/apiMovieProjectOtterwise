@@ -5,7 +5,6 @@ export default {
   showAllGenders: {
     method: "GET",
     url: "/gender",
-    preHandler: [validateRequest],
     handler: GenderControler.index,
   },
 

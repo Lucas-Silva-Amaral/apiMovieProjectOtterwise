@@ -16,7 +16,7 @@ export default {
   createMovie: {
     method: "POST",
     url: "/movies",
-    // preHandler: [validateRequest],
+    preHandler: [validateRequest],
     handler: MovieController.create,
   },
 

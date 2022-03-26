@@ -27,14 +27,13 @@ export const show = async (req, reply) => {
 
 export const create = async (req, reply) => {
   const { title, description, gender_id, user_id } = req.body;
-  console.log(req.body);
   try {
     const movie = await prisma.movie.create({
       data: {
-        title: title,
-        description: description,
-        gender_id: { id: gender_id },
-        user_id: { id: user_id },
+        title,
+        description,
+        gender_id,
+        user_id,
       },
     });
     return reply.status(201).send(movie);
@@ -46,6 +45,9 @@ export const create = async (req, reply) => {
 // update movie
 export const update = async (req, reply) => {
   const { id } = req.params;
+  if (!id) {
+    return reply.status(400).send({ error: "Movie id is required" });
+  }
 
   let data = {};
 
